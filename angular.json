@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "app-colaboradores": {
+        "app-device": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/app-colaboradores",
+                        "outputPath": "dist/app-device",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "app-colaboradores:build"
+                        "browserTarget": "app-device:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "app-colaboradores:build:production"
+                            "browserTarget": "app-device:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "app-colaboradores:build"
+                        "browserTarget": "app-device:build"
                     }
                 },
                 "test": {
@@ -116,18 +116,18 @@
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
                         "protractorConfig": "e2e/protractor.conf.js",
-                        "devServerTarget": "app-colaboradores:serve"
+                        "devServerTarget": "app-device:serve"
                     },
                     "configurations": {
                         "production": {
-                            "devServerTarget": "app-colaboradores:serve:production"
+                            "devServerTarget": "app-device:serve:production"
                         }
                     }
                 }
             }
         }
     },
-    "defaultProject": "app-colaboradores",
+    "defaultProject": "app-device",
     "cli": {
         "analytics": "06c2f53d-a905-4cf8-9ca1-8767b24a4988"
     }

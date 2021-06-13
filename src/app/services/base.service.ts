@@ -1,14 +1,14 @@
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
 export class BaseService<T> {
-    private hostname = 'http://localhost';
-    private port = 3000;
+    private hostname = environment.apiUrl;
     protected fullUrl: string;
     protected headers = new HttpHeaders();
     protected parameters: HttpParams = new HttpParams();
 
     constructor(protected http: HttpClient, path: string) {
-        this.fullUrl = `${this.hostname}:${this.port}/${path}`;
+        this.fullUrl = `${this.hostname}/${path}`;
     }
 
     public addParameter(key: string, value: string): void {
