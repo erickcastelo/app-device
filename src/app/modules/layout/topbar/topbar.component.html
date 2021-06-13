@@ -1,14 +1,21 @@
 <section class="content">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
+        <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" [collapse]="isCollapsed">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a class="nav-link" routerLink="/device/category">Categories</a>
                 </li>
                 <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a class="nav-link" routerLink="/device" >Devices</a>
+                    <a class="nav-link" routerLink="/device">Devices</a>
                 </li>
             </ul>
+
         </div>
+
     </nav>
+
 </section>

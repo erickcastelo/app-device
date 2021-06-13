@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {HttpClientModule} from '@angular/common/http';
 import {HomeModule} from './modules/home/home.module';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import {HomeModule} from './modules/home/home.module';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        HomeModule
+        HomeModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
