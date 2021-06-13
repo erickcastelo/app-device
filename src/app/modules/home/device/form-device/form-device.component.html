@@ -1,0 +1,40 @@
+<div class="content-form-device">
+    <form [formGroup]="form" (ngSubmit)="create()">
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select class="custom-select" id="category" formControlName="category_id" [ngClass]="{ 'is-invalid': submitted && f.category_id.errors }"
+                    name="category_id">
+                <option selected></option>
+                <option *ngFor="let category of categories" [value]="category.id">
+                    {{ category.name }}
+                </option>
+            </select>
+            <div *ngIf="submitted && f.category_id.errors" class="invalid-feedback">
+                <div *ngIf="f.category_id.errors.required">Category is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="color">Color</label>
+            <input type="text" class="form-control" id="color" formControlName="color" name="color"
+                   placeholder="Enter the color" [colorPicker]="form.value.color" (colorPickerChange)="setFormColor($event)"
+                   [style.background]="form.value.color" [ngClass]="{ 'is-invalid': submitted && f.color.errors }" readonly>
+            <div *ngIf="submitted && f.color.errors" class="invalid-feedback">
+                <div *ngIf="f.color.errors.required">Color is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="part_number">Part Number</label>
+            <input type="number" class="form-control" id="part_number" formControlName="part_number" name="part_number"
+                   placeholder="Enter the part number" [ngClass]="{ 'is-invalid': submitted && f.part_number.errors }">
+            <div *ngIf="submitted && f.part_number.errors" class="invalid-feedback">
+                <div *ngIf="f.part_number.errors.required">Part Number is required</div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+</div>
